@@ -71,16 +71,23 @@ class FirstTest extends TestCase
         
     }
 
-    public function testIncomplete()
-    {
-       $this->MarkTestIncomplete();
-    }
+
 
     /**
      * @doesNotPerformAssertions
      */
+    public function testIncomplete()
+    {
+        //$this->MarkTestIncomplete();
+    }
+
+
+
+     /**
+     * @doesNotPerformAssertions
+     */
     public function testIgnore()
     {
-        $this->MarkTestSkipped();
+        //$this->MarkTestSkipped();
     }
 }

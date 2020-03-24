@@ -84,7 +84,7 @@ class CartTest extends TestCase
      */
     public function testItStoresAnCart()
     {
-        $this->MarkTestSkipped();
+        $this->MarkTestIncomplete();
 
 
         $this->conn->insert($this->cart);
