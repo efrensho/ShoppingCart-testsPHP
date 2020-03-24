@@ -7,7 +7,36 @@ use App\Calculator;
 
 class FirstTest extends TestCase
 {
-    public function testSum()
+
+
+    public static function setUpBeforeClass(): void
+    {
+        echo "Inicio\n";
+    }
+
+    public static function tearDownAfterClass(): void
+    {
+        echo "Fin\n";
+    }
+    
+    protected function setUp(): void
+    {
+    }
+    
+    protected function tearDown(): void
+    {
+        echo "Teardown\n";
+    }
+
+
+
+    //Se definen las anotaciones en los comentarios como sigue
+    // Con la anotación @test no es necesario que los métodos digan test en su declaración 
+
+    /**
+     * @test
+     */
+    public function Sum()
     {
         $c = new Calculator();
 
@@ -16,6 +45,10 @@ class FirstTest extends TestCase
         $this->assertInstanceOf(Calculator::class, $c);
     }
 
+
+    /**
+     * @testdox It executes Asserts
+     */
     public function testAsserts()
     {
         // Llamar Assert forma estática
@@ -28,5 +61,26 @@ class FirstTest extends TestCase
         $this->assertIsFloat(2.0);
 
         $this->assertIsString("This is true");
+    }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function Empty()
+    {
+        
+    }
+
+    public function testIncomplete()
+    {
+       $this->MarkTestIncomplete();
+    }
+
+    /**
+     * @doesNotPerformAssertions
+     */
+    public function testIgnore()
+    {
+        $this->MarkTestSkipped();
     }
 }

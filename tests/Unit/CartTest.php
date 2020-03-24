@@ -8,6 +8,10 @@ use App\ShoppingCart\Cart;
 use App\ShoppingCart\CartItem;
 use App\Connection;
 
+
+/**
+ * @testdox Shopping Cart V2
+ */
 class CartTest extends TestCase
 {
 
